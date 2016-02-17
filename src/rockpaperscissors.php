@@ -11,10 +11,24 @@
         {
             if ((($first_input == "rock")&&($second_input == "scissors")) || (($first_input == "scissors")&&($second_input =="paper")) || (($first_input == "paper")&&($second_input =="rock")))
             {
-                return "Player 1";
+                return "Winner: Player 1 - " . "Player 1: " . $first_input . ", Player 2: " . $second_input;
             } elseif ((($first_input == "scissors")&&($second_input =="rock")) || (($first_input == "paper")&&($second_input =="scissors")) || (($first_input == "rock")&&($second_input =="paper")))
             {
-                return "Player 2";
+                return "Winner: Player 2 - " . "Player 1: " . $first_input . ", Player 2: " . $second_input;
+            } elseif ($first_input == $second_input)
+            {
+                return "Draw";
+            }
+        }
+
+        function playComputer($first_input, $second_input)
+        {
+            if ((($first_input == "rock")&&($second_input == "scissors")) || (($first_input == "scissors")&&($second_input =="paper")) || (($first_input == "paper")&&($second_input =="rock")))
+            {
+                return "Winner: Player 1 - " . "Player 1: " . $first_input . ", Computer: " . $second_input;
+            } elseif ((($first_input == "scissors")&&($second_input =="rock")) || (($first_input == "paper")&&($second_input =="scissors")) || (($first_input == "rock")&&($second_input =="paper")))
+            {
+                return "Winner: Computer - " . "Player 1: " . $first_input . ", Computer: " . $second_input;
             } elseif ($first_input == $second_input)
             {
                 return "Draw";

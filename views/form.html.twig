@@ -1,19 +1,59 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-      <h1>Rock Paper Scissors!</h1>
-      <form action="/pvp" method="get">
-        <label for="player1">Player 1! Enter "rock", "paper", or "scissors"!</label>
-        <input id="player1" name="player1" type="text">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
 
-        <label for="player2">Player 2! Enter "rock", "paper", or "scissors"!</label>
-        <input id="player2" name="player2" type="text">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Rock Paper Scissors!</h1>
+            <form action="/pvp" method="get">
+                <div class="input-field col s12">
+                    <label>Player 1</label>
+                    <select name="player1">
+                       <option value="rock">Rock</option>
+                       <option value="paper">Paper</option>
+                       <option value="scissors">Scissors</option>
+                    </select>
+                </div>
+                <div class="input-field col s12">
+                    <label>Player 2</label>
+                    <select name="player2">
+                       <option value="rock">Rock</option>
+                       <option value="paper">Paper</option>
+                       <option value="scissors">Scissors</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">PLAY!</button>
+            </form>
 
-    <button type="submit">PLAY!</button>
-    </form>
+            {% if winner is not empty %}
+                <p>Results:<br> {{ winner }}</p>
+            {% endif %}
 
-  </body>
+            <h1>One Player Rock Paper Scissors!</h1>
+            <form action="/pve" method="get">
+
+                <div class="input-field col s12">
+                    <label>Player 1</label>
+                    <select name="player1">
+                       <option value="rock">Rock</option>
+                       <option value="paper">Paper</option>
+                       <option value="scissors">Scissors</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">PLAY!</button>
+            </form>
+
+            {% if computerGame is not empty %}
+              <p>Results:<br> {{ computerGame }}</p>
+            {% endif %}
+        </div>
+    </body>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </html>
